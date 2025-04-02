@@ -62,7 +62,9 @@ export const Projects = ({ isDark }: { isDark: boolean }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index }}
               className={`${
-                isDark ? "bg-gray-800" : "bg-gray-100"
+                isDark
+                  ? "bg-gray-800 bg-opacity-70 backdrop-blur-md"
+                  : "bg-gray-100 bg-opacity-70 backdrop-blur-md"
               } rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300`}
             >
               <div className="flex items-center justify-between mb-4">

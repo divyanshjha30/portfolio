@@ -1,32 +1,39 @@
-import { motion } from 'framer-motion';
-import { Camera, Film, ShoppingBasket as Basketball, Tv } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Camera, Film, ShoppingBasket as Basketball, Tv } from "lucide-react";
 
 export const Hobbies = ({ isDark }: { isDark: boolean }) => {
   const hobbies = [
     {
       icon: Camera,
-      title: 'Photography',
-      description: 'Passionate about capturing moments and telling stories through images. Runner-up in NYKS Photography Competition.',
-      achievements: ['Led Photography Team for IITM\'s Annual Fest', '3rd place in Tasveer Competition']
+      title: "Photography",
+      description:
+        "Passionate about capturing moments and telling stories through images. Runner-up in NYKS Photography Competition.",
+      achievements: [
+        "Led Photography Team for IITM's Annual Fest",
+        "3rd place in Tasveer Competition",
+      ],
     },
     {
       icon: Film,
-      title: 'Film Making',
-      description: 'Creating visual stories and narratives through the lens.',
-      achievements: ['1st position in Film Making competition for 3 consecutive years']
+      title: "Film Making",
+      description: "Creating visual stories and narratives through the lens.",
+      achievements: [
+        "1st position in Film Making competition for 3 consecutive years",
+      ],
     },
     {
       icon: Basketball,
-      title: 'Basketball',
-      description: 'Playing basketball for fitness and team building.',
-      achievements: ['Regular player in college tournaments']
+      title: "Basketball",
+      description: "Playing basketball for fitness and team building.",
+      achievements: ["Regular player in college tournaments"],
     },
     {
       icon: Tv,
-      title: 'Movies & TV Shows',
-      description: 'Enthusiast of sci-fi movies and quality television content.',
-      interests: ['Science Fiction', 'Drama Series', 'Documentary Films']
-    }
+      title: "Movies & TV Shows",
+      description:
+        "Enthusiast of sci-fi movies and quality television content.",
+      interests: ["Science Fiction", "Drama Series", "Documentary Films"],
+    },
   ];
 
   return (
@@ -52,7 +59,9 @@ export const Hobbies = ({ isDark }: { isDark: boolean }) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index }}
               className={`${
-                isDark ? 'bg-gray-800' : 'bg-gray-100'
+                isDark
+                  ? "bg-gray-800 bg-opacity-70 backdrop-blur-md"
+                  : "bg-gray-100 bg-opacity-70 backdrop-blur-md"
               } rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300`}
             >
               <div className="flex items-center mb-4">
@@ -62,7 +71,9 @@ export const Hobbies = ({ isDark }: { isDark: boolean }) => {
               <p className="text-gray-400 mb-4">{hobby.description}</p>
               {hobby.achievements && (
                 <div className="space-y-2">
-                  <h4 className="font-semibold text-purple-400">Achievements</h4>
+                  <h4 className="font-semibold text-purple-400">
+                    Achievements
+                  </h4>
                   <ul className="list-disc list-inside text-gray-400">
                     {hobby.achievements.map((achievement) => (
                       <li key={achievement}>{achievement}</li>
