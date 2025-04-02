@@ -31,9 +31,9 @@ export default {
         },
       },
       animation: {
-        gradient: "gradient 8s linear infinite", // Gradient animation
-        float: "float 6s ease-in-out infinite", // Floating animation
-        bounceSlow: "bounce 3s infinite", // Slower bounce animation
+        gradient: "gradient 8s linear infinite",
+        float: "float 6s ease-in-out infinite",
+        bounceSlow: "bounce 3s infinite",
       },
       keyframes: {
         gradient: {
@@ -55,7 +55,7 @@ export default {
     },
   },
   plugins: [
-    require("@tailwindcss/forms"), // Optional: Better form styling
-    require("@tailwindcss/typography"), // Optional: Better typography
+    require("@tailwindcss/forms"), // Ensure this is installed
+    require("@tailwindcss/typography"), // Ensure this is installed
   ],
 };
