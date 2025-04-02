@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 export const WelcomeScreen = ({ onComplete }: { onComplete: () => void }) => {
   const [isAnimating, setIsAnimating] = useState(true);
@@ -7,7 +7,7 @@ export const WelcomeScreen = ({ onComplete }: { onComplete: () => void }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsAnimating(false);
-      setTimeout(onComplete, 1000);
+      setTimeout(onComplete, 1000); // Trigger onComplete after fade-out
     }, 3000);
 
     return () => clearTimeout(timer);
@@ -18,6 +18,7 @@ export const WelcomeScreen = ({ onComplete }: { onComplete: () => void }) => {
       className="fixed inset-0 bg-black z-50 flex items-center justify-center"
       initial={{ opacity: 1 }}
       animate={{ opacity: isAnimating ? 1 : 0 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
     >
       <motion.div

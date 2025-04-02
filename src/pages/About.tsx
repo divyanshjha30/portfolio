@@ -70,7 +70,7 @@ export const About = ({ isDark }: { isDark: boolean }) => {
           transition={{ delay: 0.4 }}
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {skills.map((skillGroup, index) => (
+          {skills.map((skillGroup) => (
             <div
               key={skillGroup.category}
               className={`p-6 rounded-lg ${

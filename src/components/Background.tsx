@@ -1,7 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
-import { useMemo, useRef } from "react";
-import * as THREE from "three";
+import { useMemo } from "react";
 
 function ParticleField({ isDark }: { isDark: boolean }) {
   const count = 3000; // Increased particle count for a denser field
@@ -43,6 +42,14 @@ export const Background = ({ isDark }: { isDark: boolean }) => {
         <color attach="background" args={[isDark ? "#0a0a0a" : "#ffffff"]} />
         <ambientLight intensity={0.5} />
         <ParticleField isDark={isDark} />
+        {/* Add a glowing sphere */}
+        <Sphere args={[1, 32, 32]} position={[0, 0, -5]}>
+          <meshStandardMaterial
+            emissive={isDark ? "#a78bfa" : "#7c3aed"}
+            emissiveIntensity={1.5}
+            color={isDark ? "#4c1d95" : "#8b5cf6"}
+          />
+        </Sphere>
         <OrbitControls
           enableZoom={false}
           enablePan={false}
