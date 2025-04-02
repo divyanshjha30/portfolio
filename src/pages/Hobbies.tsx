@@ -60,7 +60,7 @@ export const Hobbies = ({ isDark }: { isDark: boolean }) => {
               transition={{ delay: 0.1 * index }}
               className={`${
                 isDark
-                  ? "bg-gray-800 bg-opacity-70 backdrop-blur-md"
+                  ? "bg-gray-800 bg-opacity-60 backdrop-blur-md text-gray-200"
                   : "bg-gray-100 bg-opacity-70 backdrop-blur-md"
               } rounded-lg p-6 hover:transform hover:scale-105 transition-all duration-300`}
             >

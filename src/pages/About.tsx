@@ -41,7 +41,7 @@ export const About = ({ isDark }: { isDark: boolean }) => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className={`p-6 rounded-lg ${
-            isDark ? "bg-gray-800" : "bg-gray-100"
+            isDark ? "bg-gray-800 bg-opacity-60 backdrop-blur-md text-gray-200" : "bg-gray-100"
           } mb-12`}
         >
           <p className="text-lg mb-4">
@@ -75,8 +75,8 @@ export const About = ({ isDark }: { isDark: boolean }) => {
               key={skillGroup.category}
               className={`p-6 rounded-lg ${
                 isDark
-                  ? "bg-gray-800 bg-opacity-70 backdrop-blur-md text-gray-200"
-                  : "bg-gray-100 bg-opacity-70 backdrop-blur-md text-gray-800"
+                  ? "bg-gray-800 bg-opacity-30 backdrop-blur-md text-gray-200"
+                  : "bg-gray-100 bg-opacity-50 backdrop-blur-md text-gray-800"
               }`}
             >
               <h4 className="text-xl font-semibold mb-4">

@@ -22,7 +22,7 @@ export const Legal = ({ isDark }: { isDark: boolean }) => {
           transition={{ delay: 0.2 }}
           className={`p-6 rounded-lg ${
             isDark
-              ? "bg-gray-800 bg-opacity-70 backdrop-blur-md"
+              ? "bg-gray-800 bg-opacity-30 backdrop-blur-md text-gray-200"
               : "bg-gray-100 bg-opacity-70 backdrop-blur-md"
           } mb-8`}
         >
@@ -40,7 +40,7 @@ export const Legal = ({ isDark }: { isDark: boolean }) => {
           transition={{ delay: 0.3 }}
           className={`p-6 rounded-lg ${
             isDark
-              ? "bg-gray-800 bg-opacity-70 backdrop-blur-md"
+              ? "bg-gray-800 bg-opacity-30 backdrop-blur-md text-gray-200"
               : "bg-gray-100 bg-opacity-70 backdrop-blur-md"
           } mb-8`}
         >
@@ -58,7 +58,7 @@ export const Legal = ({ isDark }: { isDark: boolean }) => {
           transition={{ delay: 0.4 }}
           className={`p-6 rounded-lg ${
             isDark
-              ? "bg-gray-800 bg-opacity-70 backdrop-blur-md"
+              ? "bg-gray-800 bg-opacity-30 backdrop-blur-md text-gray-200"
               : "bg-gray-100 bg-opacity-70 backdrop-blur-md"
           }`}
         >

@@ -32,7 +32,7 @@ function App() {
           isDark={isDark}
         />
         
-        <div className={`min-h-screen ${isDark ? 'text-white' : 'text-gray-900'} ${isDark ? 'bg-black bg-opacity-90' : 'bg-white'}`}>
+        <div className={`min-h-screen ${isDark ? 'text-white' : 'text-gray-900'} ${isDark ? 'bg-black bg-opacity-30' : 'bg-white'}`}>
           <AnimatePresence mode="wait">
             <Routes>
               <Route path="/" element={<Home isDark={isDark} />} />
