@@ -11,7 +11,7 @@
 ---
 
 ## 🌟 **Live Demo**
-🔗 [Visit My Portfolio](https://your-portfolio.netlify.app)
+🔗 [Visit My Portfolio](https://divyanshjha.netlify.app)
 
 ---
 
@@ -112,7 +112,7 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - 💼 [LinkedIn](https://www.linkedin.com/in/divyanshjha30)
 - 🐦 [Twitter](https://twitter.com/divyanshjha30)
 - 📧 [Email](mailto:jhadivyansh2003@gmail.com)
-- 🌐 [Website](https://your-portfolio.netlify.app)
+- 🌐 [Website](https://divyanshjha.netlify.app)
 
 ---
 
