@@ -1,65 +1,52 @@
-import { Canvas } from "@react-three/fiber";
-import { OrbitControls, Sphere } from "@react-three/drei";
-import { useMemo } from "react";
-
-function ParticleField({ isDark }: { isDark: boolean }) {
-  const count = 8000; // Further increased particle count for better visibility
-  const particlePositions = useMemo(() => {
-    const positions = new Float32Array(count * 3);
-    for (let i = 0; i < count; i++) {
-      positions[i * 3] = (Math.random() - 0.5) * 30; // Expanded particle field
-      positions[i * 3 + 1] = (Math.random() - 0.5) * 30;
-      positions[i * 3 + 2] = (Math.random() - 0.5) * 30;
-    }
-    return positions;
-  }, []);
-
+export const Background = () => {
   return (
-    <points>
-      <bufferGeometry>
-        <bufferAttribute
-          attach="attributes-position"
-          count={count}
-          array={particlePositions}
-          itemSize={3}
-        />
-      </bufferGeometry>
-      <pointsMaterial
-        size={0.2} // Further increased particle size
-        color={isDark ? "#a78bfa" : "#7c3aed"}
-        transparent
-        opacity={0.8} // Slightly reduced opacity for a softer look
-        sizeAttenuation
-      />
-    </points>
-  );
-}
-
-export const Background = ({ isDark }: { isDark: boolean }) => {
-  return (
-    <div className="fixed inset-0 -z-10">
-      <Canvas camera={{ position: [0, 0, 20] }}>
-        <color attach="background" args={[isDark ? "#0a0a0a" : "#ffffff"]} />
-        <ambientLight intensity={0.8} /> {/* Increased ambient light */}
-        <ParticleField isDark={isDark} />
-        {/* Enhanced glowing sphere */}
-        <Sphere args={[2, 32, 32]} position={[0, 0, -15]}>
-          <meshStandardMaterial
-            emissive={isDark ? "#a78bfa" : "#7c3aed"}
-            emissiveIntensity={3.5} // Further increased emissive intensity
-            color={isDark ? "#4c1d95" : "#8b5cf6"}
-          />
-        </Sphere>
-        <OrbitControls
-          enableZoom={false}
-          enablePan={false}
-          autoRotate
-          autoRotateSpeed={1.5} // Slightly faster rotation
-        />
-      </Canvas>
+    <div className="fixed inset-0 -z-10 bg-[#060610] overflow-hidden">
+      {/* Cyan blob — top left */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-purple-900/20 via-black/40 to-black/80 animate-gradient"
-        style={{ pointerEvents: "none" }}
+        className="absolute -top-1/3 -left-1/4 w-[70vw] h-[70vh] rounded-full pointer-events-none animate-float-slow"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,212,255,0.07) 0%, transparent 65%)",
+          filter: "blur(80px)",
+        }}
+      />
+      {/* Violet blob — center right */}
+      <div
+        className="absolute top-1/4 -right-1/4 w-[60vw] h-[60vh] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(124,58,237,0.09) 0%, transparent 65%)",
+          filter: "blur(90px)",
+          animation: "float-slow 18s ease-in-out infinite reverse",
+        }}
+      />
+      {/* Pink blob — bottom center */}
+      <div
+        className="absolute -bottom-1/4 left-1/4 w-[50vw] h-[50vh] rounded-full pointer-events-none animate-float"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(236,72,153,0.06) 0%, transparent 65%)",
+          filter: "blur(70px)",
+        }}
+      />
+      {/* Green accent — bottom right */}
+      <div
+        className="absolute bottom-0 -right-1/6 w-[35vw] h-[35vh] rounded-full pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(0,255,163,0.04) 0%, transparent 65%)",
+          filter: "blur(80px)",
+          animation: "float 10s ease-in-out infinite 3s",
+        }}
+      />
+      {/* Fine grid overlay */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.018]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(255,255,255,0.3) 1px, transparent 1px),
+                           linear-gradient(90deg, rgba(255,255,255,0.3) 1px, transparent 1px)`,
+          backgroundSize: "80px 80px",
+        }}
       />
     </div>
   );
