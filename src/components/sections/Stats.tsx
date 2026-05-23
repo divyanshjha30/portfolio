@@ -2,11 +2,12 @@ import { motion, useInView } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 
 const STATS = [
-  { value: 2, suffix: "+", label: "Years at SAP" },
+  { value: 600, suffix: "+", label: "GitHub Commits" },
+  { value: 44, suffix: "+", label: "Pull Requests" },
+  { value: 20, suffix: "+", label: "Repos Contributed" },
+  { value: 20, suffix: "+", label: "CI/CD Pipelines" },
   { value: 3, suffix: "", label: "Engineering Rotations" },
-  { value: 118, suffix: "", label: "API Endpoints Built" },
-  { value: 5, suffix: "", label: "CI/CD Pipelines" },
-  { value: 90, suffix: "%", label: "Mutation Coverage" },
+  { value: 2, suffix: "+", label: "Years at SAP" },
 ];
 
 function Counter({ target, suffix }: { target: number; suffix: string }) {
@@ -42,7 +43,7 @@ export const Stats = () => {
     <section className="py-12 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto">
         <div
-          className="grid grid-cols-2 md:grid-cols-5 overflow-hidden rounded-2xl"
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 overflow-hidden rounded-2xl"
           style={{
             border: "1px solid rgba(255,255,255,0.06)",
             background: "rgba(255,255,255,0.015)",
