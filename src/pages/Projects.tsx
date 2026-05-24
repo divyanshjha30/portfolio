@@ -3,37 +3,74 @@ import { motion } from "framer-motion";
 export const Projects = ({ isDark }: { isDark: boolean }) => {
   const projects = [
     {
+      name: "Royal Casino",
+      description:
+        "Multiplayer poker & blackjack game with real-time gameplay, chip economy, player profiles, and achievements. Built with React, Supabase, and Framer Motion.",
+      tech: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
+      github: "https://github.com/divyanshjha30/project",
+      live: "https://royal-casino-dj.netlify.app",
+      type: "Personal",
+    },
+    {
+      name: "AI Talk",
+      description:
+        "CLI-powered AI assistant for chatting, code explanation, git summaries, and project scaffolding using Groq LLMs.",
+      tech: ["Python", "Groq API", "CLI"],
+      github: "https://github.com/divyanshjha30/aitalk",
+      type: "Personal",
+    },
+    {
+      name: "LLM Chatbot",
+      description:
+        "Full-stack RAG chatbot with knowledge base ingestion, vector search, and conversational AI. Includes React frontend and FastAPI backend.",
+      tech: ["Python", "FastAPI", "React", "LangChain"],
+      live: "https://web-chatbot-divyansh.netlify.app",
+      type: "Personal",
+    },
+    {
+      name: "Project Management Suite",
+      description:
+        "Full-stack project management system with task boards, team collaboration, and real-time updates.",
+      tech: ["React", "Node.js", "Express", "MongoDB"],
+      live: "https://project-management-system-fsad.netlify.app",
+      type: "Personal",
+    },
+    {
       name: "Sustainability Dashboard",
       description:
-        "Developed a cloud-based dashboard using SAP UI5, Cloud Foundry, and SAP BTP for tracking sustainability metrics.",
+        "Cloud-based dashboard using SAP UI5, Cloud Foundry, and SAP BTP for tracking sustainability metrics and energy efficiency.",
       tech: ["SAP UI5", "Cloud Foundry", "SAP BTP"],
       type: "Professional",
     },
     {
       name: "i-ScOper 3.0 Wizard",
       description:
-        "Built a UI wizard for scope management and energy efficiency tracking.",
+        "UI wizard for scope management and energy efficiency tracking within SAP ecosystem.",
       tech: ["SAP UI5", "API Integration"],
       type: "Professional",
     },
     {
       name: "TicTacToe Game",
-      description: "Interactive TicTacToe game built with JavaScript",
-      tech: ["JavaScript", "HTML", "CSS"],
+      description:
+        "Interactive TicTacToe game with AI opponent, score tracking, and clean animations.",
+      tech: ["JavaScript", "Vite", "CSS"],
       github: "https://github.com/divyanshjha30/tictactoe-game",
+      live: "https://tictactoe-divyanshjha.netlify.app",
       type: "Personal",
     },
     {
       name: "Box Office App",
-      description: "Movie information and box office tracking application",
-      tech: ["JavaScript", "React", "API Integration"],
+      description:
+        "Movie information and box office tracking application with search, ratings, and trending data.",
+      tech: ["React", "API Integration", "CSS"],
       github: "https://github.com/divyanshjha30/box-office-app",
       type: "Personal",
     },
     {
       name: "Enord Website",
-      description: "Website for AI-driven drone startup",
-      tech: ["JavaScript", "React"],
+      description:
+        "Marketing website for an AI-driven drone startup showcasing products and services.",
+      tech: ["React", "JavaScript", "CSS"],
       github: "https://github.com/divyanshjha30/enord-website",
       type: "Personal",
     },
@@ -90,16 +127,28 @@ export const Projects = ({ isDark }: { isDark: boolean }) => {
                   </span>
                 ))}
               </div>
-              {project.github && (
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-purple-400 hover:text-purple-300"
-                >
-                  View on GitHub →
-                </a>
-              )}
+              <div className="flex items-center gap-4">
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-purple-400 hover:text-purple-300 text-sm"
+                  >
+                    GitHub →
+                  </a>
+                )}
+                {project.live && (
+                  <a
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-400 hover:text-green-300 text-sm"
+                  >
+                    Live Demo →
+                  </a>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
