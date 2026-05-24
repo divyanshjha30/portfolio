@@ -32,6 +32,7 @@ export const Projects = ({ isDark }: { isDark: boolean }) => {
       description:
         "Full-stack project management system with task boards, team collaboration, and real-time updates.",
       tech: ["React", "Node.js", "Express", "MongoDB"],
+      github: "https://github.com/project-management-suite",
       live: "https://project-management-system-fsad.netlify.app",
       type: "Personal",
     },
