@@ -8,7 +8,7 @@ export const Projects = ({ isDark }: { isDark: boolean }) => {
         "Multiplayer poker & blackjack game with real-time gameplay, chip economy, player profiles, and achievements. Built with React, Supabase, and Framer Motion.",
       tech: ["React", "TypeScript", "Supabase", "Tailwind CSS"],
       github: "https://github.com/divyanshjha30/project",
-      live: "https://project-six-tan-29.vercel.app",
+      live: "https://royalcasinofun.vercel.app/",
       type: "Personal",
     },
     {

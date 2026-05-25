@@ -128,7 +128,7 @@ const PROJECTS: Project[] = [
     ],
     categories: ["Personal"],
     github: "https://github.com/divyanshjha30/project",
-    live: "https://project-six-tan-29.vercel.app",
+    live: "https://royalcasinofun.vercel.app/",
   },
   {
     name: "AITalk — CLI AI Assistant",
