@@ -33,7 +33,7 @@ export const Projects = ({ isDark }: { isDark: boolean }) => {
         "Full-stack project management system with task boards, team collaboration, and real-time updates.",
       tech: ["React", "Node.js", "Express", "MongoDB"],
       github: "https://github.com/project-management-suite",
-      live: "https://project-management-system-project.netlify.app/",
+      live: "https://project-management-system-frontend-umber.vercel.app/",
       type: "Personal",
     },
     {
@@ -56,7 +56,7 @@ export const Projects = ({ isDark }: { isDark: boolean }) => {
         "Interactive TicTacToe game with AI opponent, score tracking, and clean animations.",
       tech: ["JavaScript", "Vite", "CSS"],
       github: "https://github.com/divyanshjha30/tictactoe-game",
-      live: "https://tictactoe-divyanshjha.netlify.app",
+      live: "https://tictactoe-game-alpha-three.vercel.app",
       type: "Personal",
     },
     {

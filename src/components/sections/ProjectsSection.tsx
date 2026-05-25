@@ -98,7 +98,7 @@ const PROJECTS: Project[] = [
   {
     name: "Project Management Suite",
     description:
-      "118-endpoint REST API across 12 functional modules. Node.js + Express + PostgreSQL + Supabase with JWT auth, role-based access (Admin / Manager / Dev), email OTP verification, file storage, and Swagger docs. Deployed to Vercel + Netlify.",
+      "118-endpoint REST API across 12 functional modules. Node.js + Express + PostgreSQL + Supabase with JWT auth, role-based access (Admin / Manager / Dev), email OTP verification, file storage, and Swagger docs. Deployed to Vercel.",
     tech: [
       "Node.js",
       "Express",
@@ -109,7 +109,7 @@ const PROJECTS: Project[] = [
       "Swagger",
     ],
     categories: ["Personal"],
-    live: "https://project-management-system-project.netlify.app/",
+    live: "https://project-management-system-frontend-umber.vercel.app/",
     github: "https://github.com/project-management-suite",
     badge: "118 API Endpoints",
     featured: true,
