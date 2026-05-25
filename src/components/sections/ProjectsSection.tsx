@@ -108,7 +108,7 @@ const PROJECTS: Project[] = [
       "Swagger",
     ],
     categories: ["Personal"],
-    live: "https://project-management-system-fsad.netlify.app",
+    live: "https://project-management-system-project.netlify.app/",
     github: "https://github.com/project-management-suite",
     badge: "118 API Endpoints",
     featured: true,
