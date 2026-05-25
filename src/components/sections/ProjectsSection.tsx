@@ -22,6 +22,7 @@ const PROJECTS: Project[] = [
       "Production enterprise AI chatbot deployed on SAP cloud infrastructure. Full RAG pipeline (Python + Ollama + Neo4j vector store) enabling LLM-grounded responses over large-scale SAP internal wikis. Cross-LoB collaboration between CALM NG-DCI and APM-IPS teams. Has its own CI/CD, docs site, and enterprise deployment.",
     tech: ["Python", "RAG", "Neo4j", "Ollama", "LLM", "Jenkins", "SAP Cloud"],
     categories: ["SAP Enterprise", "AI & ML"],
+    live: "https://fish.datalake-svcprovider.c.eu-de-2.cloud.sap",
     badge: "Production-deployed",
     featured: true,
   },
