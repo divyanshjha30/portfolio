@@ -6,15 +6,15 @@ Personal site for Divyansh Jha, software engineer at SAP Labs India.
 
 ## Stack
 
-| Tool | Role |
-| --- | --- |
-| React 18 + TypeScript | UI, strict mode |
-| Vite 5 | Build and dev server |
-| Tailwind CSS 3 | Styling and design tokens |
-| Framer Motion 11 | Reveals, page transitions, magnetic hover |
-| Lenis | Smooth scrolling |
-| React Router 6 | Client-side routing |
-| Vercel | Hosting and analytics |
+| Tool                  | Role                                      |
+| --------------------- | ----------------------------------------- |
+| React 18 + TypeScript | UI, strict mode                           |
+| Vite 5                | Build and dev server                      |
+| Tailwind CSS 3        | Styling and design tokens                 |
+| Framer Motion 11      | Reveals, page transitions, magnetic hover |
+| Lenis                 | Smooth scrolling                          |
+| React Router 6        | Client-side routing                       |
+| Vercel                | Hosting and analytics                     |
 
 ## Structure
 
@@ -35,14 +35,14 @@ experience should not require touching a component.
 
 ## Routes
 
-| Path | Page |
-| --- | --- |
-| `/` | Index — hero, stats, selected work, trajectory, principles |
-| `/work` | All projects, filterable by discipline |
-| `/work/:slug` | Project case study |
-| `/experience` | Career timeline, education, recognition |
-| `/about` | Bio, toolkit, interests |
-| `/contact` | Contact details |
+| Path          | Page                                                       |
+| ------------- | ---------------------------------------------------------- |
+| `/`           | Index — hero, stats, selected work, trajectory, principles |
+| `/work`       | All projects, filterable by discipline                     |
+| `/work/:slug` | Project case study                                         |
+| `/experience` | Career timeline, education, recognition                    |
+| `/about`      | Bio, toolkit, interests                                    |
+| `/contact`    | Contact details                                            |
 
 ## Development
 
