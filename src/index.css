@@ -1,155 +1,197 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300..900;1,300..900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg-0: #060610;
-  --bg-1: #0a0a1a;
-  --bg-2: #10102a;
-  --accent-cyan: #00d4ff;
-  --accent-violet: #7c3aed;
-  --accent-pink: #ec4899;
-  --accent-green: #00ffa3;
-  --text-0: #f0f4ff;
-  --text-1: #94a3b8;
-  --text-2: #4a5568;
-  --border: rgba(255, 255, 255, 0.06);
-  --glass-bg: rgba(255, 255, 255, 0.025);
-  --glass-border: rgba(255, 255, 255, 0.07);
+  --ink: #08080a;
+  --ink-2: #0e0e11;
+  --ink-3: #16161a;
+  --ink-4: #1e1e24;
+  --paper: #f4f4f0;
+  --paper-dim: #b4b4bc;
+  --paper-muted: #7c7c86;
+  --paper-faint: #4a4a52;
+  --accent: #cbff46;
+  --iris: #6e8bff;
+  --line: rgba(244, 244, 240, 0.08);
   color-scheme: dark;
 }
 
 * {
   box-sizing: border-box;
+  min-width: 0;
 }
 
 html {
-  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
+  background-color: var(--ink);
+  color: var(--paper);
   font-family:
-    "Space Grotesk",
+    "Inter Tight",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-  background-color: var(--bg-0);
-  color: var(--text-0);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+::selection {
+  background: var(--accent);
+  color: var(--ink);
+}
+
 ::-webkit-scrollbar {
-  width: 3px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--bg-0);
+  background: var(--ink);
 }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    to bottom,
-    var(--accent-cyan),
-    var(--accent-violet)
-  );
-  border-radius: 2px;
+  background: var(--ink-4);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--paper-faint);
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, #00d4ff 0%, #7c3aed 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
 }
 
-.gradient-text-green {
-  background: linear-gradient(135deg, #00ffa3 0%, #00d4ff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+@layer components {
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.22em] text-paper-muted;
+  }
+
+  .rule {
+    @apply h-px w-full bg-line;
+  }
+
+  .card {
+    @apply relative rounded-2xl border border-line bg-ink-2/60;
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded-full border border-line px-2.5 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-paper-dim;
+  }
+
+  .shell {
+    @apply mx-auto w-full max-w-[1240px] px-5 sm:px-8 lg:px-12;
+  }
 }
 
-/* Section label — inspired by archigreendesigns // SECTION style */
-.section-label {
-  font-family: "Space Mono", monospace;
-  font-size: 0.68rem;
-  letter-spacing: 0.28em;
-  color: var(--accent-cyan);
-  text-transform: uppercase;
-  display: block;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  /* Display serif used for emphasised words inside headings */
+  .serif {
+    font-family: "Instrument Serif", Georgia, serif;
+    font-weight: 400;
+  }
+  /* Optical tightening for very large headlines */
+  .display {
+    letter-spacing: -0.04em;
+    line-height: 0.92;
+  }
 }
 
-/* Glass card */
-.glass-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: 16px;
-  transition:
-    border-color 0.3s ease,
-    background 0.3s ease;
+/* Film-grain overlay breaks up flat dark areas */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain-shift 8s steps(6) infinite;
 }
 
-.glass-card:hover {
-  border-color: rgba(0, 212, 255, 0.18);
-  background: rgba(0, 212, 255, 0.015);
+@keyframes grain-shift {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  16% {
+    transform: translate(-4%, 2%);
+  }
+  33% {
+    transform: translate(3%, -3%);
+  }
+  50% {
+    transform: translate(-2%, 4%);
+  }
+  66% {
+    transform: translate(4%, 1%);
+  }
+  83% {
+    transform: translate(-3%, -2%);
+  }
 }
 
-/* Divider */
-.section-divider {
-  height: 1px;
-  background: linear-gradient(
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--marquee-duration, 40s) linear infinite;
+}
+
+.marquee-mask {
+  -webkit-mask-image: linear-gradient(
     to right,
     transparent,
-    rgba(255, 255, 255, 0.08),
+    black 12%,
+    black 88%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 12%,
+    black 88%,
     transparent
   );
 }
 
-/* Animations */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-18px);
+/* Native cursor is hidden while the custom cursor is mounted */
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
   }
 }
 
-@keyframes float-slow {
-  0%,
-  100% {
-    transform: translateY(0px) scale(1);
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  50% {
-    transform: translateY(-30px) scale(1.05);
+  .grain::after {
+    animation: none;
   }
-}
-
-@keyframes pulse-glow {
-  0%,
-  100% {
-    opacity: 0.35;
-  }
-  50% {
-    opacity: 0.7;
-  }
-}
-
-.animate-float {
-  animation: float 8s ease-in-out infinite;
-}
-.animate-float-slow {
-  animation: float-slow 14s ease-in-out infinite;
-}
-.animate-pulse-glow {
-  animation: pulse-glow 4s ease-in-out infinite;
 }

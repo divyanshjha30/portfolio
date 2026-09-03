@@ -1,23 +1,28 @@
-import { Hero } from "../components/sections/Hero";
-import { Stats } from "../components/sections/Stats";
-import { About } from "../components/sections/About";
-import { Experience } from "../components/sections/Experience";
-import { ProjectsSection } from "../components/sections/ProjectsSection";
-import { Achievements } from "../components/sections/Achievements";
-import { Hobbies } from "../components/sections/Hobbies";
-import { Contact } from "../components/sections/Contact";
+import { Hero } from "../components/home/Hero";
+import { StatStrip } from "../components/home/StatStrip";
+import { SelectedWork } from "../components/home/SelectedWork";
+import { CareerStrip } from "../components/home/CareerStrip";
+import { Principles } from "../components/home/Principles";
+import { Marquee } from "../components/ui/Marquee";
+import { marqueeWords } from "../data/site";
+import { useSEO } from "../lib/seo";
 
 export const Home = () => {
+  useSEO(
+    "Divyansh Jha — Software Engineer",
+    "Software engineer at SAP Labs India building enterprise-grade distributed systems in Java, Spring Boot and microservices on SAP BTP Cloud Foundry.",
+  );
+
   return (
-    <main>
+    <>
       <Hero />
-      <Stats />
-      <About />
-      <Experience />
-      <ProjectsSection />
-      <Achievements />
-      <Hobbies />
-      <Contact />
-    </main>
+      <div className="border-y border-line py-6">
+        <Marquee items={marqueeWords} />
+      </div>
+      <StatStrip />
+      <SelectedWork />
+      <CareerStrip />
+      <Principles />
+    </>
   );
 };
